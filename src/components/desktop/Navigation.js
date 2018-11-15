@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Context from '../context'
-import { subCategorys } from '../../info'
+import Context from './context'
+import { subCategorys } from '../info'
 
 class Navigation extends Component {
     static contextType = Context;

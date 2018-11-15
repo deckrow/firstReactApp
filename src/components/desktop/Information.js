@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Context from '../context'
+import Context from './context'
 import { AboutClient, AboutWork, AboutPrice } from './DetailedInformation'
-import { clientInfo } from '../../info'
+import { clientInfo } from '../info'
 
 class Information extends Component {
     static contextType = Context;

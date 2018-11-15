@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { AboutClient, AboutWork, AboutPrice } from '../desktop/main/DetailedInformation'
+import { AboutClient, AboutWork, AboutPrice } from '../desktop/DetailedInformation'
 
 class Information extends Component {
     render() {

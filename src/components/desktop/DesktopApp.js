@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Head from './header/Head'
-import Main from './main/Main'
+import Head from './Head'
+import Main from './Main'
 import Context from './context'
 
 class Desktop extends Component {

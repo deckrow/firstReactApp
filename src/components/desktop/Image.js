@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Context from '../context'
-import { subCategorys, clientInfo } from '../../info'
+import Context from './context'
+import { subCategorys, clientInfo } from '../info'
 
 class Image extends Component {
     static contextType = Context;

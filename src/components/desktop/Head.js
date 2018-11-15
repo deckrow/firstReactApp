@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Context from '../context'
-import { categorys } from '../../info'
+import Context from './context'
+import { categorys } from '../info'
 
 class Head extends Component {
     static contextType = Context;
