@@ -4,7 +4,7 @@ class Image extends Component {
     render() {
         return (
             <div className="portf__img">
-                <img src={'assets/img/' + this.props.img} className="main-img" />
+                <img src={'img/' + this.props.img} className="main-img" />
             </div>
         );
     }

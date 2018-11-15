@@ -33,31 +33,35 @@ class Image extends Component {
     }
 
     componentDidUpdate() {
-        if (this.state.activeCat !== this.context.first && 
-            this.state.preloadCat.indexOf(this.context.first) === -1) {
+        const { first } = this.context;
+        const { preloadCat, activeCat } = this.state;
+        
+        if (activeCat !== first && preloadCat.indexOf(first) === -1) {
             this.preloadImg();
 
             this.setState(state => ({ 
-                activeCat: this.context.first,
-                preloadCat: [...state.preloadCat, this.context.first]
+                activeCat: first,
+                preloadCat: [...state.preloadCat, first]
             }));
         }
     }
 
     prevCategory = () => {
-        const last = subCategorys[this.context.first].length;
+        const { toggle, first, second } = this.context;
+        const last = subCategorys[first].length;
             
-        this.context.second !== 0
-            ? this.context.toggle('activeSubCategory', this.context.second - 1)
-            : this.context.toggle('activeSubCategory', last - 1)
+        second !== 0
+            ? toggle('activeSubCategory', second - 1)
+            : toggle('activeSubCategory', last - 1)
     }
 
     nextCategory = () => {
-        const last = subCategorys[this.context.first].length;
+        const { toggle, first, second } = this.context;
+        const last = subCategorys[first].length;
             
-        this.context.second !== last - 1
-            ? this.context.toggle('activeSubCategory', this.context.second + 1)
-            : this.context.toggle('activeSubCategory', 0)
+        second !== last - 1
+            ? toggle('activeSubCategory', second + 1)
+            : toggle('activeSubCategory', 0)
     }
     
     render() {

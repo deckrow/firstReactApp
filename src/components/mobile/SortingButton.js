@@ -11,7 +11,7 @@ class SortingButton extends Component {
     }
 
     handleChange(event) {
-        let val = parseInt(event.target.value, 10);
+        const val = parseInt(event.target.value, 10);
 
         this.setState({activeCategory: val});
         this.props.toggle(val);
@@ -26,7 +26,8 @@ class SortingButton extends Component {
             <div className="portf__select">
                 <select className="portf__select-btn" 
                     value={this.state.activeCategory} 
-                    onChange={this.handleChange}>
+                    onChange={this.handleChange}
+                >
                     {categorys.map(this.showCategory)}
                 </select>
             </div>

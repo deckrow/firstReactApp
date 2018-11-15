@@ -6,12 +6,14 @@ class Head extends Component {
     static contextType = Context;
 
     navItem = (name, i) => {
+        const { first, toggle } = this.context;
+
         return (
-            <li className={this.context.first === i ? 'portf__nav-item active' : 'portf__nav-item'} 
+            <li className={first === i ? 'portf__nav-item active' : 'portf__nav-item'} 
                 key={i} 
                 onClick={() => {
-                    this.context.toggle('activeCategory', i);
-                    this.context.toggle('activeSubCategory', 0);
+                    toggle('activeCategory', i);
+                    toggle('activeSubCategory', 0);
                 }}
             >
                 {name}

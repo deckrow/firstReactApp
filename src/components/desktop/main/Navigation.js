@@ -6,12 +6,14 @@ class Navigation extends Component {
     static contextType = Context;
 
     navItem = (name, i) => {
-        let count = subCategorys[this.context.first].length;
+        const { toggle, first, second } = this.context;
+        const count = subCategorys[first].length;
+        
         return (
-            <li className={this.context.second === i ? 'portf__nav2-item active' : 'portf__nav2-item'} 
+            <li className={second === i ? 'portf__nav2-item active' : 'portf__nav2-item'} 
                 style={{ width: 100 / count + '%' }}
                 key={i} 
-                onClick={() => this.context.toggle('activeSubCategory', i)}>
+                onClick={() => toggle('activeSubCategory', i)}>
                 {name}
             </li>
         );

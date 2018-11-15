@@ -33,8 +33,8 @@ class Main extends Component {
             dots: false,
             infinite: true,
             slidesToShow: 1,
-            nextArrow: <Arrow src="assets/img/right-arr.png" classN="portf__arr right" />,
-            prevArrow: <Arrow src="assets/img/left-arr.png" classN="portf__arr left" />
+            nextArrow: <Arrow src="img/right-arr.png" classN="portf__arr right" />,
+            prevArrow: <Arrow src="img/left-arr.png" classN="portf__arr left" />
         };
         
         return (
