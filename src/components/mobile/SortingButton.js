@@ -13,7 +13,7 @@ class SortingButton extends Component {
     handleChange(event) {
         const val = parseInt(event.target.value, 10);
 
-        this.setState({activeCategory: val});
+        this.setState({ activeCategory: val });
         this.props.toggle(val);
     }
 
@@ -24,7 +24,8 @@ class SortingButton extends Component {
     render() {
         return (
             <div className="portf__select">
-                <select className="portf__select-btn" 
+                <select 
+                    className="portf__select-btn" 
                     value={this.state.activeCategory} 
                     onChange={this.handleChange}
                 >

@@ -14,7 +14,7 @@ class Desktop extends Component {
     }
 
     toggle = (name, newState) => {
-        this.setState({[name]: newState})
+        this.setState({ [name]: newState })
     }
 
     render() {

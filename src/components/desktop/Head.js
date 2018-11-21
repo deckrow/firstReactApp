@@ -9,7 +9,8 @@ class Head extends Component {
         const { first, toggle } = this.context;
 
         return (
-            <li className={first === i ? 'portf__nav-item active' : 'portf__nav-item'} 
+            <li 
+                className={first === i ? 'portf__nav-item active' : 'portf__nav-item'} 
                 key={i} 
                 onClick={() => {
                     toggle('activeCategory', i);

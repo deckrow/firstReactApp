@@ -10,7 +10,8 @@ class Navigation extends Component {
         const count = subCategorys[first].length;
         
         return (
-            <li className={second === i ? 'portf__nav2-item active' : 'portf__nav2-item'} 
+            <li 
+                className={second === i ? 'portf__nav2-item active' : 'portf__nav2-item'} 
                 style={{ width: 100 / count + '%' }}
                 key={i} 
                 onClick={() => toggle('activeSubCategory', i)}>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function AboutClient(props) {
+export const AboutClient = (props) => {
     return(
         <div className="portf__info-section">
             <p className="portf__info-title">О клиенте:</p>
@@ -10,7 +10,7 @@ export function AboutClient(props) {
     );
 }
 
-export function AboutWork(props) {
+export const AboutWork = (props) => {
     return(
         <div className="portf__info-section">
             <p className="portf__info-title">Изделие:</p>
@@ -20,6 +20,6 @@ export function AboutWork(props) {
     );
 }
 
-export function AboutPrice(props) {
+export const AboutPrice = (props) => {
     return <p className="portf__info-title">Цена: <span className="price">{props.price} руб.</span></p>;
 }
