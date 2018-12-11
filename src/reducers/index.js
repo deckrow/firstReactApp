@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux'
-import category from './category'
+import activeCategory from './activeCategory'
+import data from './data'
 
 export default combineReducers({
-    category
+    activeCategory,
+    data
 })
 

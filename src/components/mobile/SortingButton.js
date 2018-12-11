@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { categorys } from '../info'
+//import { categorys } from '../info'
 
 class SortingButton extends Component {
     constructor(props) {

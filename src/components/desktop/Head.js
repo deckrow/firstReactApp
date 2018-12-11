@@ -1,36 +1,43 @@
 import React, { Component } from 'react'
-import Context from './context'
-import { categorys } from '../info'
 
 class Head extends Component {
-    static contextType = Context;
+    componentWillMount() {
+        const { data } = this.props;
+        
+        const categorys = [...new Set(data.map(val => val.categoryName))].map(name => {
+            return {
+                'name': name,
+                'id': data.find(val => val.categoryName === name).id
+            }
+        })
 
-    navItem = (name, i) => {
-        const { first, toggle } = this.context;
+        this.setState({ categorys })
+    }
+
+    navItem = (item, i) => {
+        const { toggleCategory, activeCategory } = this.props;
+        const { name, id } = item
 
         return (
             <li 
-                className={first === i ? 'portf__nav-item active' : 'portf__nav-item'} 
-                key={i} 
-                onClick={() => {
-                    toggle('activeCategory', i);
-                    toggle('activeSubCategory', 0);
-                }}
+                className={name === activeCategory.name ? 'portf__nav-item active' : 'portf__nav-item'} 
+                key={id} 
+                onClick={() => toggleCategory(id, name)}
             >
                 {name}
             </li>
-        );
+        )
     }
 
     render() {
         return(
             <div className="portf__header">
                 <ul className="portf__nav">
-                    {categorys.map(this.navItem)}
+                    {this.state.categorys.map(this.navItem)}
                 </ul>
             </div>
-        );
+        )
     }
 }
 
-export default Head;
+export default Head

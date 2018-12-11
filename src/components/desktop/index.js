@@ -1,34 +1,12 @@
 import React, { Component } from 'react'
-import Head from './Head'
-import Main from './Main'
-import Context from './context'
+import Head from '../../container/HeadContainer'
+import Main from '../../container/MainContainer'
 
-class Desktop extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = { 
-            activeCategory: 0,
-            activeSubCategory: 0
-        };
-    }
-
-    toggle = (name, newState) => {
-        this.setState({ [name]: newState })
-    }
-
-    render() {
-        return(
-            <Context.Provider value={{
-                first: this.state.activeCategory,
-                second: this.state.activeSubCategory,
-                toggle: this.toggle
-            }}>
-                <Head />
-                <Main /> 
-            </Context.Provider>
-        );
-    }
-}
+const Desktop = () => (
+    <>
+        <Head />
+        <Main />
+    </>       
+)
 
 export default Desktop;

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Image from './Image'
 import Information from './Information'
 import Slider from 'react-slick'
-import { clientInfo } from '../info'
+//import { clientInfo } from '../info'
 
 function Arrow(props) {
     const { classN, src, onClick } = props;

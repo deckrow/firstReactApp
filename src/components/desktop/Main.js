@@ -5,11 +5,19 @@ import Information from './Information'
 
 class Main extends Component {
     render() {
+        const { data, activeCategory, toggleCategory } = this.props
+        const activeItem = data.find(val => {
+            if (val.id === activeCategory.id)
+                return val
+        })
+
+        const props = { data, activeItem, activeCategory, toggleCategory }
+
         return(
             <div className="portf__main">
-                <Navigation />
-                <Image />
-                <Information />
+                <Navigation {...props} />
+                <Image {...props} />
+                <Information {...props} />
             </div>
         );
     }

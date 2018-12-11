@@ -1,4 +1,5 @@
-export const toggleCategory = id => ({
+export const toggleCategory = (id, name) => ({
     type: 'TOGGLE_CATEGORY',
-    id
+    id,
+    name
 })
