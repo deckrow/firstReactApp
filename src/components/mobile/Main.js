@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Image from './Image'
 import Information from './Information'
 import Slider from 'react-slick'
-//import { clientInfo } from '../info'
 
 function Arrow(props) {
     const { classN, src, onClick } = props;
@@ -17,12 +16,12 @@ function Arrow(props) {
 }
 
 class Main extends Component {
-    slide = (el, i) => {
-        if (el.charAt(0) === this.props.first.toString()) {
+    slide = (val, i) => {
+        if (val.categoryName === this.props.activeCategory.name) {
             return (
                 <div className="portf__slide" key={i}>
-                    <Image img={clientInfo[el].img}/>
-                    <Information info={clientInfo[el]}/>
+                    <Image img={val.img}/>
+                    <Information info={val}/>
                 </div>
             );
         }
@@ -40,7 +39,7 @@ class Main extends Component {
         return (
             <div className="portf__slider">
                 <Slider {...settings}>
-                    {Object.keys(clientInfo).map(this.slide)}
+                    {this.props.data.map(this.slide)}
                 </Slider>
             </div>
         );

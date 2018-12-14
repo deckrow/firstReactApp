@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Head from '../../container/HeadContainer'
 import Main from '../../container/MainContainer'
 

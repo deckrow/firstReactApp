@@ -1,33 +1,23 @@
 import React, { Component } from 'react'
-//import { categorys } from '../info'
 
 class SortingButton extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = { activeCategory: 0 }
-
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(event) {
-        const val = parseInt(event.target.value, 10);
-
-        this.setState({ activeCategory: val });
-        this.props.toggle(val);
+    handleChange(e) {
+        this.props.toggleCategory(0, e.target.value);
     }
 
     showCategory = (name, i) => {
-        return <option key={i} value={i}>{name}</option>
+        return <option key={i} value={name}>{name}</option>
     }
 
     render() {
+        const categorys = [...new Set(this.props.data.map(val => val.categoryName))]
+
         return (
             <div className="portf__select">
                 <select 
-                    className="portf__select-btn" 
-                    value={this.state.activeCategory} 
-                    onChange={this.handleChange}
+                    className="portf__select-btn"
+                    value={this.props.activeCategory.name}
+                    onChange={this.handleChange.bind(this)}
                 >
                     {categorys.map(this.showCategory)}
                 </select>

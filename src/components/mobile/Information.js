@@ -1,20 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { AboutClient, AboutWork, AboutPrice } from '../desktop/DetailedInformation'
 
-class Information extends Component {
-    render() {
-        const { info } = this.props;
-        return (
-            <div className="portf__info">
-                <AboutClient address={info.address} />
-                <AboutWork area={info.area} glassType={info.glassType} />
-                <AboutPrice price={info.price} />
-                <div className="portf__center">
-                    <button className="portf__info-btn modalbtn1">Хочу так же</button>
-                </div>
+function Information(props) {
+    return (
+        <div className="portf__info">
+            <AboutClient address={props.info.address} />
+            <AboutWork area={props.info.area} glassType={props.info.glassType} />
+            <AboutPrice price={props.info.price} />
+            <div className="portf__center">
+                <button className="portf__info-btn modalbtn1">Хочу так же</button>
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default Information;
